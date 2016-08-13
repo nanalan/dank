@@ -1,0 +1,783 @@
+blue = #25aff4
+orange = #f90
+black = #151515
+dark = #111111
+grey = #6A6A68
+
+@css {
+  @font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;src:local('Source Sans Pro Regular'),url(https://brick.a.ssl.fastly.net/fonts/sourcesanspro/400.woff) format('woff')}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:600;src:local('Source Sans Pro Semibold'),url(https://brick.a.ssl.fastly.net/fonts/sourcesanspro/600.woff) format('woff')}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:700;src:local('Source Sans Pro Bold'),url(https://brick.a.ssl.fastly.net/fonts/sourcesanspro/700.woff) format('woff')}@font-face{font-family:'Lato';font-style:normal;font-weight:400;src:local('Lato Regular'),url(https://brick.a.ssl.fastly.net/fonts/lato/400.woff) format('woff')}@font-face{font-family:'Lato';font-style:normal;font-weight:600;src:local('Lato Semibold'),url(https://brick.a.ssl.fastly.net/fonts/lato/600.woff) format('woff')}
+}
+
+Header = 'Source Sans Pro', "helvetica neue", arial, sans-serif
+Body = 'Lato', "helvetica neue", arial, sans-serif
+
+scratch-logo = 'https://scratch.mit.edu/images/logo_sm.png'
+messages = 'https://scratch.mit.edu/images/nav-notifications.png'
+mystuff = 'https://scratch.mit.edu/images/mystuff.png'
+dropdown = 'https://scratch.mit.edu/images/dropdown.png'
+search = 'https://scratch.mit.edu/images/nav-search-glass.png'
+
+@require 'source/dank.font.styl'
+
+// new scratch
+body
+  #navigation
+    border-bottom none
+    background-color navbar-color
+
+    .logo a
+      transition none
+      background-size 81px !important
+
+    .link a span
+      font-weight 400
+      font-size 14px
+
+    .mystuff > a, .messages > a
+      background-size 24px !important
+
+// old scratch
+body
+  height auto
+  min-height 100%
+
+  .avatar img
+    border-radius 3px
+
+  #content
+    padding-top 6em
+
+  .container {
+    width 90%
+    max-width 1200px
+  }
+
+  // navbar
+  #topnav
+    box-shadow none
+    height 51px
+    user-select none
+    position fixed
+    box-shadow 0 0 3px rgba(0,0,0,.25)
+
+    *, .user-nav li a, .user-nav li form input {
+      font-family Header
+    }
+
+    .user-nav li a {
+      background-color transparent !important
+      color white !important
+      font-family Header
+    }
+
+    .innerwrap
+      height 100%
+      background-color navbar-color
+
+      .container
+        height 100%
+        width 942px
+        margin 0 auto
+
+        li
+          border none
+          height 51px
+          line-height @height
+          background transparent
+
+          &:hover
+            background rgba(black, 0.1)
+
+        > a, .site-nav > li > a, .account-nav > li > a
+          position relative
+          border none
+          font-weight 500
+          color white
+          font-size 14px
+          margin 0
+          padding 17px 15px 0
+          height 33px
+          line-height 1
+          font-weight 400
+
+          &:hover
+            background-color transparent !important
+            color white !important
+
+        .logo
+          //height 51px
+          width 80px
+          flex-shrink 0
+
+          background-image url(scratch-logo)
+          background-repeat no-repeat
+          background-size 81px
+          background-position center
+          padding-right 16px
+
+          span
+            display none
+
+      .account-nav
+        margin 0
+        height 51px
+
+        .logged-in-user.open
+          background-color transparent !important
+
+        &.logged-in > li
+          .dropdown-menu
+            background-color navbar-color
+            margin-top 25px
+            box-shadow none
+
+            li, li > a
+              height 36px
+              line-height 36px
+
+              form input[type=submit]
+                background-color transparent
+
+          > .messages-icon
+            background url(messages) no-repeat center
+            background-size 24px
+            padding-left 10px
+            width 30px
+            padding-right 10px
+
+          > .mystuff-icon
+            background url(mystuff) no-repeat center
+            background-size 24px
+            padding-left 10px
+            padding-right 10px
+            width 30px
+
+          .notificationsCount
+            line-height 17px
+            margin-top 4px
+
+          .user-icon
+            border none
+            border-radius 3px
+            margin-top 3px
+
+          .caret
+            border none
+            background url(dropdown) no-repeat center
+            height 20px
+            width 20px
+            margin-left 8px
+            background-size 50%
+            opacity 1
+
+
+    form.search
+      margin 0 20px
+
+      .glass
+        position absolute
+        background-color transparent
+        background-image url(search)
+        background-repeat no-repeat
+        background-position center
+        background-size 14px 14px
+        width 40px
+        border none
+        box-shadow none
+        margin-top 5px
+        cursor pointer
+        height 40px
+
+      #search-input
+        transition .15s ease background-color
+        padding 0
+        padding-right 10px
+        padding-left 40px
+        //width calc(100% - 50px)
+        height 40px
+        color #fff
+        font-size 14px
+        outline none
+        display inline-block
+        margin .5em 0
+        margin-top 5px
+        box-shadow none
+        border none
+        background-color rgba(black, 0.1)
+        border-radius 5px
+        width 147.281px
+        flex-grow 0
+
+        &:focus
+          background-color rgba(black, 0.2)
+
+      ::placeholder
+        color hsla(0,0%,100%,.75)
+
+// both scratches
+body
+  background black
+  color white
+
+  font-family Body
+  font-size 124%
+
+  #comments ul.comments ul li {
+    border-top 0
+  }
+
+  .button, .button:hover {
+    outline 0
+    border 0
+    display inline-block
+
+    background rgba(grey, 0.1)
+    border 2px solid blue
+    color blue
+
+    transition background 70ms
+
+    box-shadow none
+    transition 150ms
+
+    &, &.small {
+      height initial
+      width initial
+      border-radius 3px
+      color blue
+      font-weight 600
+      text-transform lowercase
+
+      margin 1em .5em
+      padding .55em 1em !important
+    }
+
+    a, > span:not(.text) {
+      color blue
+      font-size 105%
+      padding 0
+    }
+
+    .icon-sm.follower.black {
+      background-position -15px -400px
+    }
+
+    &.grey {
+      border-color orange
+      background rgba(grey, 0.1)
+
+      a, > span:not(.text) {
+        color orange
+      }
+
+      &:hover {
+        background orange
+
+        a, > span:not(.text) {
+          color white
+        }
+      }
+    }
+
+    &:hover {
+      color white
+      background blue
+
+      a, > span:not(.text) {
+        color white
+      }
+    }
+  }
+
+  textarea {
+    max-width 100%
+    //padding 1em
+    border 0
+    color white
+    background rgba(grey, 0.1)
+    border-radius 2px
+    font-family Body
+    font-size inherit
+  }
+
+  .box .box-content .inner {
+    background-color rgba(grey, 0.1)
+  }
+
+  #profile {
+    h1, h2, h3, h4, h5, h6 {
+      //font-size 100%
+    }
+  }
+
+  #comments .comments li
+    border 0
+    background rgba(grey, 0.1)
+    border-radius 2px
+
+    .easter-egg {
+      /*
+      _meow_ -> :shipit:
+      _gobo_ -> :package:
+      _10mil_ -> :tada:
+      _waffle_ -> weird cheerleader gif
+      */
+
+      background-size contain
+      background-position center center
+
+      &[src$='gobo.png'], &[src$='waffle.png'], &[src$='meow.png'], &[src$='10mil.png'] {
+        width 0
+        height 0
+        padding 12px
+        margin-bottom -7px
+        margin-top -12px
+      }
+
+      &[src$='gobo.png'] {
+        background-image url('http://emoji.fileformat.info/gemoji/package.png')
+      }
+
+      &[src$='waffle.png'] {
+        background-image url('http://rs276.pbsrc.com/albums/kk2/RobsalyJune2007/Encouragement%20Cheerleading/CheerLeader1.gif~c200')
+      }
+
+      &[src$='meow.png'] {
+        background-image url('http://emoji.fileformat.info/gemoji/shipit.png')
+      }
+
+      &[src$='10mil.png'] {
+        background-image url('http://emoji.fileformat.info/gemoji/tada.png')
+      }
+    }
+
+    .info .name
+      line-height 16px
+
+      a
+        color orange
+        font-weight 400
+        font-size 110%
+
+    .actions-wrap {
+      top 8px
+      right 8px
+
+      a:hover {
+        text-decoration underline
+      }
+    }
+
+    .avatar {
+      width 60px
+      height 60px
+      margin-right 1em
+      border-radius 2px
+    }
+
+    .comment
+      margin 0
+      padding 1em
+
+    .lastvisible
+      padding-bottom .5em
+
+    /*
+    .highlighted
+      background rgba(grey, 0.2)
+
+      &.reply
+        border-radius 0
+
+        &.last
+          border-bottom-left-radius 2px
+          border-bottom-right-radius 2px
+    */
+
+    ul
+      margin 0
+      margin-left 2em
+      margin-right 2em
+      padding-bottom 2em
+
+  #comments .more-replies {
+    box-shadow none
+    border 0
+    background transparent
+    margin-left 2em
+    margin-top -16px
+    height 36px
+
+    .pulldown {
+      border 0
+      display block
+      height 36px
+      line-height 36px
+      width 100%
+
+      background transparent
+    }
+
+    &:hover {
+      .pulldown {
+        text-decoration underline
+      }
+    }
+  }
+
+  .slider-carousel {
+    padding 1em 1.2em
+
+    &, .viewport {
+      height initial !important
+      max-height 324px
+    }
+
+    .viewport.empty-field {
+      // oh noes
+      background rgba(black, 0.1)
+      border 0
+
+      h4 {
+        color rgba(white, 0.5)
+        font-size 100%
+        font-family Body
+        letter-spacing normal
+        text-align left
+      }
+    }
+
+    .scroll-content {
+      display flex
+      flex-wrap wrap
+      width 100% !important
+    }
+
+    .slider-carousel-control, .scrollbar {
+      display none
+    }
+
+    .thumb {
+      flex-grow 0
+      flex-shrink 0
+
+      border-radius 2px
+      background rgba(grey, 0.1)
+
+      margin .25em
+
+      img {
+        border 0
+        margin 0
+        margin-bottom .5em
+        border-top-left-radius 2px
+        border-top-right-radius 2px
+        width 100%
+      }
+
+      .title, .owner {
+        padding-top .1em
+        padding-left .5em
+        padding-right .5em
+        padding-bottom .1em
+
+        a {
+          width 95%
+          font-weight 400
+        }
+      }
+
+      &:not(:nth-child(-n+14)) {
+        display none
+      }
+    }
+  }
+
+  #navigation, #nav {
+    font-family Header
+  }
+
+  b, strong, .activity-stream .actor
+    font-weight 500
+
+  .comment.removed
+    display none
+
+  *
+    text-shadow none !important
+
+  .box
+    background transparent
+    border 0
+    width inherit !important
+    border-radius none
+
+    .box-head, .box-content, .footer, .box-header
+      border 0
+      background transparent
+
+      h4 {
+        margin 0
+      }
+
+  #tabs {
+    margin-top 1em
+  }
+
+  ul.curators li {
+    background rgba(grey, 0.1)
+    border 0
+  }
+
+  .h-tabs>li, .h-tabs>li:hover {
+    border 0 !important
+  }
+
+  .h-tabs>li.active, .h-tabs>li.active:hover {
+    border 0
+    border-radius 2px
+    background transparent
+    color orange
+
+    a {
+      color orange
+    }
+  }
+
+  .h-tabs>li>a {
+    border 0 !important
+  }
+
+  #gallery-cover-image, .thumb img {
+    border 0
+  }
+
+  #description.read-only .overview {
+    color rgba(white, 0.7)
+  }
+
+  #footer {
+    background dark
+    color grey
+    box-shadow none
+
+    ul.footer-col li h4 {
+      font-weight 400
+      font-size 110%
+      color grey
+    }
+  }
+
+  #user-details h3, .featured-project-heading, #profile-box .doing h3 {
+    font-size 100%
+    font-family Body
+    letter-spacing normal
+    font-weight 500
+    padding-left 0
+  }
+
+  .slick-track {
+    transform initial !important
+  }
+
+  .slick-next, .slick-prev {
+    visibility hidden
+  }
+
+  .thumbnail .thumbnail-image img {
+    border none
+  }
+
+  .thumbnail.gallery:last-child {
+    visibility hidden
+  }
+
+  #profile-box .player {
+    border 0
+  }
+
+  /*
+  #featured-project img {
+    width 75%
+    height 75%
+  }
+  */
+
+  #profile-box .doing {
+    border 0
+    background transparent
+    //width calc(100% - 642px - 42px)
+
+    .activity-stream div {
+      margin-top .5em
+      width calc(100% - 25px)
+    }
+
+    li:last-child {
+      display none
+    }
+
+    span.actor {
+      display none
+    }
+  }
+
+  .editable:hover, .editable.write {
+    border 2px solid rgba(grey, 0.1) !important
+    background-color rgba(grey, 0.1)
+  }
+
+  #profile-data .footer {
+    border-top 0
+  }
+
+  .showcase .stage {
+    background transparent
+  }
+
+  .header-text .profile-details .group {
+    border-right 0
+  }
+
+  .box .box-head .portrait img, .avatar img {
+    border-radius 2px
+    border 0
+    background transparent
+  }
+
+input[type] {
+  font-family Body
+}
+
+#app {
+  padding-top 4em
+}
+
+.follow-button {
+  padding 0 !important
+
+  span {
+    color white
+  }
+}
+
+.icon.see-inside.white {
+  padding-left 40px !important
+}
+
+body.editor #content, body.editor .stage object.scratch_swf, body.editor .player, body.editor .showcase {
+  margin 0
+}
+
+.editor #player {
+  width 100vw !important
+  height 100vh !important
+}
+
+.showcase .info {
+  border-left 0
+}
+
+.text-block .divider {
+  border-bottom 1px solid rgba(grey, 0.2)
+}
+
+@require 'source/dank.forums.styl'
+
+body .about .body {
+  border 0
+  border-radius 2px
+  background rgba(grey, 0.1)
+}
+
+body img, body iframe {
+  border 0 !important
+}
+
+body .information-page .title-banner.masthead {
+  background-color transparent !important
+
+  .inner {
+    background rgba(orange, 0.2)
+
+    h1 {
+      color orange
+      text-align center
+    }
+  }
+}
+
+#navigation .inner>ul>li.search .button[type=text], #navigation .inner>ul>li.search .input[type=text] {
+  font-size 0.85rem !important
+}
+
+body {
+  #view #projectBox {
+    background-color rgba(grey, 0.1)
+  }
+
+  .tabs li, .tabs li:hover {
+    background-color rgba(grey, 0.1) !important
+    border-bottom 0
+
+    &.active, &.active:hover {
+      border-bottom 1px solid rgba(grey, 0.1)
+    }
+  }
+
+  .tabs {
+    background-color transparent
+  }
+
+  #view .load button {
+    background-color transparent
+  }
+}
+
+#comments .comment .info .content {
+  color white
+}
+
+#notification-list h3 {
+  margin-top 1em
+  margin-bottom .5em
+}
+
+.v-tabs li {
+  border-radius 0 !important
+  border 0 !important
+}
+
+.notification-feed ul li.unread {
+  color orange
+  background-color rgba(orange, 0.2)
+
+  a, a:hover {
+    color white !important
+  }
+
+  .icon {
+    filter brightness(100)
+  }
+
+  .time {
+    color white
+  }
+}
+
+.notification-feed ul li, ul.scratch-team li {
+  border-bottom 0
+
+  .time {
+    display inline-block
+    float right
+  }
+}
+
+#comments #comments-enabled-box {
+  border-bottom 0 !important
+}
+
+#view {
+  background-color transparent !important
+}

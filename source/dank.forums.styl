@@ -1,0 +1,155 @@
+/* extends Scratch Forum Meme by @scratchisthebest */
+
+#pagewrapper {
+  background black !important
+  color grey !important
+}
+
+#djangobbwrap {
+
+}
+
+.follow-topic .button {
+  color blue
+  margin-top 0
+  font-weight 600 !important
+}
+
+#djangobbwrap .djangobb {
+  .blockpost, .postright {
+    color white
+    background-color #1D1D1D
+  }
+
+  blockquote {
+    background-color rgba(grey, 0.1)
+    border-left-color rgba(grey, 0.1)
+  }
+
+  a:not(.button) {
+    color blue !important
+
+    &:hover, &:hover:after {
+      color blue !important
+      background-color transparent !important
+      text-decoration underline !important
+    }
+
+    &.black, table & {
+      color orange !important
+
+      &:hover, &:hover:after {
+        color orange !important
+      }
+    }
+  }
+
+  .postfootright {
+    a {
+      color rgba(grey, 0.5) !important
+      background-color transparent !important
+      transition color 50ms
+
+      &:hover, &:hover:after {
+        color grey !important
+        text-decoration none !important
+      }
+    }
+  }
+
+  .markItUp .markItUpHeader {
+    .markItUpButton1, .markItUpButton2, .markItUpButton3, .markItUpButton4 {
+      a {
+        filter brightness(4)
+      }
+    }
+  }
+
+  * {
+    font-family Body
+  }
+
+  pre, pre span {
+    font-family 'Source Code Pro', 'Fira Mono', 'Roboto Mono', 'Menlo', monospace
+  }
+
+  .button.new_topic {
+    background black
+    line-height 1
+    top 76px
+
+    border-radius 2px !important
+    @extend h3
+
+    span, &::before {
+      color #faa51d
+    }
+
+    &:hover {
+      border 3px solid orange !important
+
+      span {
+        color white
+      }
+    }
+
+    &::before {
+      display none
+    }
+  }
+
+  #vf .box-head h4 span {
+    @extend h2
+  }
+
+  #vf > .box > .box-content {
+    margin-top 8em
+  }
+
+  .tclcon > h3 > a {
+    color white !important
+
+    &:hover {
+      color white !important
+    }
+  }
+
+  .tcr > a {
+    color #888 !important
+
+    &:hover {
+      color #888 !important
+    }
+  }
+
+  .linkst li:nth-child(2) a {
+    color orange !important
+
+    &:hover {
+      color orange !important
+    }
+  }
+
+  .code {
+    border 0
+    padding 0
+    color white
+    background transparent
+  }
+
+  .postsignature {
+    hr {
+      margin-bottom 1rem
+    }
+
+    padding-bottom 1rem
+  }
+
+  .markItUpPreviewFrame {
+    background-color #1D1D1D
+    border 0
+    border-radius 0
+  }
+}
+
+@require 'source/dank.forums.code.styl'

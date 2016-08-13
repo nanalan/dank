@@ -1,0 +1,19 @@
+GEM
+  specs:
+    autoprefixer-rails (6.3.6)
+      execjs
+    execjs (2.6.0)
+    stylus (1.0.1)
+      execjs
+      stylus-source
+    stylus-source (0.49.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  autoprefixer-rails
+  stylus
+
+BUNDLED WITH
+   1.12.4
