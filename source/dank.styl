@@ -226,7 +226,7 @@ body
     border-top 0
   }
 
-  .button, .button:hover {
+  .button {
     outline 0
     border 0
     display inline-block
@@ -780,4 +780,71 @@ body {
 
 #view {
   background-color transparent !important
+}
+
+.box .box-content.grey {
+  background-color rgba(grey, 0.1)
+  border-radius 2px
+}
+
+.media-col li {
+  border 0
+}
+
+.editable-empty {
+  border 1px solid rgba(grey, 0.2)
+  background-color rgba(grey, 0.1)
+}
+
+body:not(.editor) #player {
+  position relative
+
+  &:before, &:after {
+    content ''
+    background black
+
+    width 100%
+    position absolute
+  }
+
+  &:before {
+    height 12px
+  }
+
+  &:after {
+    height 13px
+    bottom 0
+  }
+}
+
+.showcase .actions {
+  background-color black
+  border 0
+
+  .action {
+    color white
+    border-right 0
+  }
+
+  .action a.remix-tree {
+    border 0 !important
+    box-shadow none !important
+  }
+}
+
+.player-box-footer-module {
+  background-color black
+}
+
+.player-box-footer-module textarea, .player-box-footer-module div.section.social textarea {
+  background-color black
+  font-family monospace
+}
+
+.showcase .info .fixed {
+  border-top 0
+}
+
+#explore-bar {
+  display none
 }

@@ -5,14 +5,29 @@
   color grey !important
 }
 
-#djangobbwrap {
-
+.postmsg .post_body_html {
+  font-size 1.3rem
 }
 
-.follow-topic .button {
-  color blue
+.follow-topic .button, .unfollow-button.button {
+  color orange
+  border-color orange
   margin-top 0
   font-weight 600 !important
+
+  &:hover {
+    background orange
+    color white
+    border-color orange
+  }
+}
+
+.blockpost {
+  position relative
+}
+
+.blockpost > a[name] {
+  top -64px
 }
 
 #djangobbwrap .djangobb {
@@ -86,6 +101,7 @@
     }
 
     &:hover {
+      background orange
       border 3px solid orange !important
 
       span {
