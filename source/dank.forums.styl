@@ -72,14 +72,6 @@
     }
   }
 
-  .markItUp .markItUpHeader {
-    .markItUpButton1, .markItUpButton2, .markItUpButton3, .markItUpButton4 {
-      a {
-        filter brightness(4)
-      }
-    }
-  }
-
   * {
     font-family Body
   }
@@ -166,6 +158,157 @@
     border 0
     border-radius 0
   }
+
+  /* <thanks matu> */
+
+  .markItUp .markItUpButton:after {
+    font-family: "Material Icons";
+    font-size: 16px;
+    color: #aaa;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  .markItUp .markItUpButton1 a {
+    background-image: none !important;
+  }
+
+  .markItUp .markItUpButton1:after {
+    content: "format_bold";
+  }
+
+  .markItUp .markItUpButton2 a {
+    background-image: none !important;
+  }
+
+  .markItUp .markItUpButton2:after {
+    content: "format_italic";
+  }
+
+  .markItUp .markItUpButton3 a {
+    background-image: none !important;
+  }
+
+  .markItUp .markItUpButton3:after {
+    content: "format_underline";
+  }
+
+  .markItUp .markItUpButton4 a {
+    background-image: none !important;
+  }
+
+  .markItUp .markItUpButton4:after {
+    content: "strikethrough_s";
+  }
+
+  .markItUp .markItUpButton5 a {
+    background-image: none !important;
+  }
+
+  .markItUp .markItUpButton5:after {
+    content: "image";
+  }
+
+  .markItUp .markItUpButton6 a {
+    background-image: none !important;
+  }
+
+  .markItUp .markItUpButton6:after {
+    content: "link";
+  }
+
+  .markItUp .markItUpButton7 a {
+    background-image: none !important;
+  }
+
+  .markItUp .markItUpButton7:after {
+    content: "format_size";
+  }
+
+  .markItUp .markItUpButton7-1:before, .markItUp .markItUpButton7-2:before {
+    content: "format_size";
+    font-family: "Material Icons";
+    font-size: 16px;
+    color: #25aff4;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .markItUp .markItUpButton8 a {
+    background-image: none !important;
+  }
+
+  .markItUp .markItUpButton8:after {
+    content: "format_list_bulleted";
+  }
+  .markItUp .markItUpButton9 a {
+    background-image: none !important;
+  }
+
+  .markItUp .markItUpButton9:after {
+    content: "format_list_numbered";
+  }
+
+  .markItUp .markItUpButton10 a {
+    background-image: none !important;
+  }
+
+  .markItUp .markItUpButton10:after {
+    content: "format_list_bulleted";
+    height: 8px;
+    overflow: hidden;
+    top: 4px;
+  }
+
+  .markItUp .markItUpButton11 a {
+    background-image: none !important;
+  }
+
+  .markItUp .markItUpButton11:after {
+    content: "format_quote";
+  }
+
+  .markItUp .markItUpButton12>a {
+    background-image: none !important;
+  }
+
+  .markItUp .markItUpButton12:after {
+    content: "insert_emoticon";
+  }
+
+  .markItUp .markItUpButton13 a {
+    background-image: none !important;
+  }
+
+  .markItUp .markItUpButton13:after {
+    content: "computer";
+  }
+
+  .markItUp .markItUpButton15 a {
+    background-image: none !important;
+  }
+
+  .markItUp .markItUpButton15:after {
+    content: "format_clear";
+  }
+
+  .markItUp .markItUpButton14>a {
+    filter: saturate(0);
+    -webkit-filter: saturate(0);
+  }
+
+  .markItUp .markItUpButton16 a {
+    background-image: none !important;
+  }
+
+  .markItUp .markItUpButton16:after {
+    content: "done";
+  }
+
+  /* </thanks matu> */
 }
 
 @require 'source/dank.forums.code.styl'
